@@ -28,12 +28,14 @@ run-as: Linux-user-name
 #   # build-graph:
         
 phases:
+  run-as: root
   install:
     runtime-versions:
       python: 3.8
     commands:
       # - echo "Installing dependencies..."
-      - pip install -r requirements.txt
+      - apt-get update
+      - apt-get install -y python3-pip
     finally:
       # - echo "All dependencies installed."
       - echo Cleaning up...
@@ -42,6 +44,8 @@ phases:
       # - echo "Executing pre-build commands..."
   build:
     commands:
+      - pip install -r requirements.txt
+      - python manage.py makemigrations
       - python manage.py test
       # - command
     finally:  
