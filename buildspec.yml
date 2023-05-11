@@ -30,7 +30,7 @@ run-as: Linux-user-name
 phases:
   install:
     runtime-versions:
-      python: 3.9.6
+      python: 3.8
     commands:
       - echo "Installing dependencies..."
       - pip install -r requirements.txt
