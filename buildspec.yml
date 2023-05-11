@@ -1,6 +1,6 @@
 version: 0.2
 
-run-as: Linux-user-name
+# run-as: Linux-user-name
 
 # env:
 #   shell: shell-tag
@@ -28,7 +28,6 @@ run-as: Linux-user-name
 #   # build-graph:
         
 phases:
-  run-as: root
   install:
     runtime-versions:
       python: 3.8
