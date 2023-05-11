@@ -32,15 +32,13 @@ phases:
     runtime-versions:
       python: 3.8
     commands:
-      # - echo "Installing dependencies..."
-      - apt-get update
-      - apt-get install -y python3-pip
+       - echo "Installing phase..."
     finally:
-      # - echo "All dependencies installed."
+      - echo "All dependencies installed."
       - echo Cleaning up...
   pre_build:
     commands:
-      # - echo "Executing pre-build commands..."
+      - echo "Executing pre-build commands..."
   build:
     commands:
       - pip install -r requirements.txt
