@@ -42,7 +42,6 @@ phases:
   build:
     commands:
       - pip install -r requirements.txt
-      - python manage.py makemigrations
       - python manage.py test
       # - command
     finally:  
