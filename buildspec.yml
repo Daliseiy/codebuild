@@ -32,22 +32,20 @@ phases:
     runtime-versions:
       python: 3.8
     commands:
-      - echo "Installing dependencies..."
+      # - echo "Installing dependencies..."
       - pip install -r requirements.txt
     finally:
-      - echo "All dependencies installed."
-      - echo "Cleaning up..."
+      # - echo "All dependencies installed."
+      - echo Cleaning up...
   pre_build:
     commands:
-      - echo "Executing pre-build commands..."
+      # - echo "Executing pre-build commands..."
   build:
-    run-as: Linux-user-name
-    on-failure: ABORT | CONTINUE
     commands:
       - python manage.py test
       # - command
-  #   finally:
-  #     - command
+    finally:  
+      - echo All tests passed.
   #     - command
   # post_build:
   #   run-as: Linux-user-name
